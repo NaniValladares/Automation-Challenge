@@ -6,9 +6,8 @@ describe('Parking page', () => {
 })
 
 
-it('demonstrate the selectByVisibleText command', () => {
-    const selectBox = $('#selectbox');
-    console.log(selectBox.getText('option:checked')); // returns "uno"
-    selectBox.selectByVisibleText('cuatro');
-    console.log(selectBox.getText('option:checked')); // returns "cuatro"
-})
+it('should demonstrate the getValue command', () => {
+    const inputUser = $('#StartingDate');
+    input.addValue('21/01/21')
+    console.log(value); // outputs: "John Doe"
+});
