@@ -255,5 +255,107 @@ describe('Parking page', () => {
         expect(result).toHaveTextContaining("$ 2.00");
     });
     
+    it('Long-Term Surface Parking: should stay for four hours', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('4:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 8.00");
+    });
+
+    it('Long-Term Surface Parking: should stay for ten hours and a half', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('10:30');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 10.00");
+    });
+
+    it('Long-Term Surface Parking: should stay for a day', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/22/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 10.00");
+    });
+
+    it('Long-Term Surface Parking: should stay for more than one day', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/22/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('4:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 18.00");
+    });
+
+    it('Long-Term Surface Parking: should stay for one week', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/28/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 60.00");
+    });
+
+    it('Long-Term Surface Parking: should stay for a week and two days', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(5)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/30/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 80.00");
+    });
+
 })
 
