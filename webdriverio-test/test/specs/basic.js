@@ -4,6 +4,16 @@ describe('Parking page', () => {
         expect(browser).toHaveTitle('Parking Cost Calculator');
     })
 
+    it('should display the calculator', () => {
+        const Calculator = $("body > form > table > tbody");
+        expect(Calculator).toBeVisible();
+    })
+
+    it('should have clickable button', () => {
+        const ClickButton = $("body > form > input[type=submit]:nth-child(3)");
+        expect(ClickButton).toBeClickable();
+    })
+
     // Valet Parking Test Cases
     it('Valet Parking: should stay for a day', () => {
         result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
