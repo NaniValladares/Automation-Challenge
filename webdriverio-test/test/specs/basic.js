@@ -133,5 +133,55 @@ describe('Parking page', () => {
         expect(result).toHaveTextContaining("$ 28.00");
     });
 
+    //Long-Term Garage Parking
+    it('Long-Term Garage Parking: should stay for one hour', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(4)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('1:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 2.00");
+    });
+
+    it('Long-Term Garage Parking: should stay for six hours', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(4)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('6:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 12.00");
+    });
+
+    it('Long-Term Garage Parking: should stay for a day', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(4)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/22/2021');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 12.00");
+    });
+
+    
+
 })
 
