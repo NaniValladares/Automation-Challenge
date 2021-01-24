@@ -357,5 +357,109 @@ describe('Parking page', () => {
         expect(result).toHaveTextContaining("$ 80.00");
     });
 
+
+    //Economy Lot Parking
+    it('Economy Lot Parking: should stay for one hour', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('1:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 2.00");
+    });
+
+    it('Economy Lot Parking: should stay for three hour', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('3:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 6.00");
+    });
+
+    it('Economy Lot Parking: should stay for ten hours', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/21/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('10:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 9.00");
+    });
+
+    it('Economy Lot Parking: should stay for a day', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/22/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 9.00");
+    });
+
+    it('Economy Lot Parking: should stay for a week', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/28/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 54.00");
+    });
+
+    it('Economy Lot Parking: should stay for a week and two days', () => {
+        ParkingLot = $("#ParkingLot > option:nth-child(3)");
+        ParkingLot.click();
+        result= $("body > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > span.SubHead > b");
+        Calculatebutton = $("body > form > input[type=submit]:nth-child(3)");
+        inputStart = $('#StartingDate');
+        inputFinish = $('#LeavingDate');
+        inputStartTime = $('#StartingTime');
+        inputEndTime = $('#LeavingTime');
+        inputStart.setValue('1/21/2021');
+        inputFinish.setValue('1/30/2021');
+        inputStartTime.setValue('12:00');
+        inputEndTime.setValue('12:00');
+        Calculatebutton.click();
+        expect(result).toHaveTextContaining("$ 72.00");
+    });
+
 })
 
